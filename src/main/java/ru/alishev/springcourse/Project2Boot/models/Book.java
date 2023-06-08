@@ -51,6 +51,9 @@ public class Book {
     @Transient
     private int test;
 
+    @Transient
+    private int test2;
+
     public boolean isOverdue() {
         return isOverdue;
     }

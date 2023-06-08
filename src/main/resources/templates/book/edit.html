@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update person</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/book/{id}(id=${book.getId()})}" th:object="${book}">
+  <label for="name">Enter name: </label>
+  <input type="text" th:field="*{name}" id ="name"/>
+  <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+  <br/>
+  <br>
+
+    <label for="author">Enter author: </label>
+    <input type="text" th:field="*{author}" id ="author"/>
+  <div style="color:red" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">author error</div>
+    <br/>
+  <br>
+
+  <label for="year">Enter year: </label>
+  <input type="text" th:field="*{year}" id ="year"/>
+  <div style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}">year error</div>
+  <br/>
+  <br>
+
+<!--  <label for="person_id">Enter person_id: </label>-->
+<!--  <input type="text" th:field="*{person_id}" id ="person_id"/>-->
+<!--  <div style="color:red" th:if="${#fields.hasErrors('person_id')}" th:errors="*{person_id}">person_id error</div>-->
+<!--  <br/>-->
+
+
+  <input type="submit" value ="update!"/>
+</form>
+
+</body>
+</html>

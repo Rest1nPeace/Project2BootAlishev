@@ -4,11 +4,14 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "Book")
@@ -53,10 +56,6 @@ public class Book {
 
     @Transient
     private int test2;
-
-    public boolean isOverdue() {
-        return isOverdue;
-    }
 
     public void setOverdue(boolean overdue) {
         isOverdue = overdue;
